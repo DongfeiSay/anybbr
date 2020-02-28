@@ -1,5 +1,5 @@
 #!/bin/bash
-image='https://github.com/wuntel/anybbr/raw/cloud-image/centos-7.7-x86_64-docker.tar.xz'
+image='https://github.com/wuntel/anybbr/raw/master/centos-7.7-x86_64-docker.tar.xz'
 bbx='https://busybox.net/downloads/binaries/1.31.0-defconfig-multiarch-musl/busybox-x86_64'
 nc_root='/centos7'
 download(){
