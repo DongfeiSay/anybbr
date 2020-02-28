@@ -52,5 +52,5 @@ install_package
 install_grub_netcfg
 rm -rf $nc_root
 yum clean all
-dracut -fNm "bash base kernel-modules rootfs-block network shutdown" --kver "3.10.0-1062.12.1.el7.x86_64"
+dracut -fNm "bash base kernel-modules rootfs-block network shutdown" --kver "3.10.0-1062.12.1.el7.x86_64" 2>/dev/null
 echo -e "\n please run \"sync;reboot -f\" \n"
