@@ -27,7 +27,7 @@ extract_image(){
 }
 install_package(){
 	echo "nameserver 8.8.8.8" > /etc/resolv.conf
-	yum install rpm-build grub2 dhclient openssh-server passwd kernel -y || true
+	yum install grub2 dhclient openssh-server passwd kernel dracut-network -y || true
 	sed -i '/^#PermitRootLogin\s/s/.*/&\nPermitRootLogin yes/' /etc/ssh/sshd_config
 	systemctl enable sshd
 	read -p "请修改root密码:" password
@@ -52,4 +52,5 @@ install_package
 install_grub_netcfg
 rm -rf $nc_root
 yum clean all
+dracut -fNm "bash base kernel-modules rootfs-block network shutdown" --kver "3.10.0-1062.12.1.el7.x86_64"
 echo -e "\n please run \"sync;reboot -f\" \n"
