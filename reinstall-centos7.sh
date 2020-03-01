@@ -36,7 +36,7 @@ install_package(){
 install_grub_netcfg(){
 	device=$(lsblk -npsro TYPE,NAME  | awk '($1 == "disk") { print $2}' | head -n1)
 	grub2-install $device
-	echo -e "GRUB_TIMEOUT=5\nGRUB_CMDLINE_LINUX=\"net.ifnames=0\"" > /etc/default/grub
+	echo -e "GRUB_TIMEOUT=5\nGRUB_CMDLINE_LINUX=\"net.ifnames=0 console=ttyS0\"" > /etc/default/grub
 	grub2-mkconfig -o /boot/grub2/grub.cfg 2>/dev/null
 	touch /etc/sysconfig/network
 	cat<<eof>/etc/sysconfig/network-scripts/ifcfg-eth0
