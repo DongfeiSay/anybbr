@@ -1,0 +1,5 @@
+#!ipxe
+set cmd vga=788 console=tty0 console=ttyS0 net.ifnames=0
+kernel http://ftp.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux ${cmd}
+initrd http://ftp.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
+boot
