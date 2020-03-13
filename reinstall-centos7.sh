@@ -1,5 +1,6 @@
 #!/bin/bash
 if command -v wget >/dev/null 2>&1;then
+	clear
 	else echo "ERROR:  please install wget"
 fi
 ############################################
