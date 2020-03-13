@@ -65,7 +65,7 @@ config-grub(){
 	local dev=$(ls /sys/block)
 		grub2-install /dev/${dev}
 			grub2-mkconfig -o /boot/grub2/grub.cfg
-				echo -e "GRUB_TIMEOUT=5\nGRUB_CMDLINE_LINUX=\"net.ifnames=0\""
+				echo -e "GRUB_TIMEOUT=5\nGRUB_CMDLINE_LINUX=\"net.ifnames=0\"" >/etc/default/grub
 }
 ###########################################
 dl
