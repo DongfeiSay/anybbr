@@ -67,6 +67,15 @@ config-grub(){
 			grub2-mkconfig -o /boot/grub2/grub.cfg
 }
 ###########################################
+dl
+backup-data
+del-root
+un-xz
+restore-data
+installer-pak
+create-kernel-image
+config-network
+config-grub
 echo "
 
 Install centos7 successfully  ;     default root password:  cnddy10
