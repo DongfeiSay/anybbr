@@ -77,6 +77,7 @@ installer-pak
 create-kernel-image
 config-network
 config-grub
+rm -rf /tmpos
 echo "
 
 Install centos7 successfully  ;     default root password:  cnddy10
