@@ -42,7 +42,7 @@ installer-pak(){
 }
 ############################################
 create-kernel-image(){
-	dracut -fNm "bash base kernel-modules rootfs-block network shutdown" --kver "3.10.0-1062.12.1.el7.x86_64" 2>/dev/null
+	dracut -fNm "bash base kernel-modules rootfs-block network shutdown" --kver "3.10.0-1062.12.1.el7.x86_64" >/dev/null 2>&1
 }
 ############################################
 config-network(){
@@ -63,7 +63,7 @@ EOF
 ###########################################
 config-grub(){
 	local dev=$(ls /sys/block)
-		grub2-install ${dev}
+		grub2-install /dev/${dev}
 			grub2-mkconfig -o /boot/grub2/grub.cfg
 }
 ###########################################
