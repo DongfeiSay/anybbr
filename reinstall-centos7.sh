@@ -39,6 +39,7 @@ installer-pak(){
 	yum -y install grub2 dhclient openssh-server kernel dracut-network || true
 		##enable sshd
 			sed -i '/^#PermitRootLogin\s/s/.*/&\nPermitRootLogin yes/' /etc/ssh/sshd_config && systemctl enable sshd
+ldconfig
 }
 ############################################
 create-kernel-image(){
