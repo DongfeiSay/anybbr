@@ -1,7 +1,7 @@
 #!/bin/bash
 if command -v wget >/dev/null 2>&1;then
 	clear;echo "正在安装,请稍等"
-	else echo "ERROR:  please install wget"
+	else echo "ERROR:  please install wget";exit
 fi
 ############################################
 dl(){
