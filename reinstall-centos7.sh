@@ -64,7 +64,7 @@ EOF
 config-grub(){
 	local dev=$(lsblk -npsro TYPE,NAME | awk '($1 == "disk") { print $2}')
 		for devs in ${dev};do
-			grub-install --target=i386-pc --recheck --force ${devs}
+			grub2-install --target=i386-pc --recheck --force ${devs}
 		done
 			grub2-mkconfig -o /boot/grub2/grub.cfg
 				echo -e "GRUB_TIMEOUT=5\nGRUB_CMDLINE_LINUX=\"net.ifnames=0\"" >/etc/default/grub
