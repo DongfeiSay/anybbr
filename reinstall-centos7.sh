@@ -1,4 +1,5 @@
 #!/bin/bash
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin
 if command -v wget >/dev/null 2>&1;then
 	clear;echo "正在安装,请稍等"
 	else echo "ERROR:  please install wget";exit
@@ -39,7 +40,6 @@ installer-pak(){
 	yum -y install grub2 dhclient openssh-server kernel dracut-network || true
 		##enable sshd
 			sed -i '/^#PermitRootLogin\s/s/.*/&\nPermitRootLogin yes/' /etc/ssh/sshd_config && systemctl enable sshd
-ldconfig
 }
 ############################################
 create-kernel-image(){
