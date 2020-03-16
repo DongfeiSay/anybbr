@@ -37,7 +37,7 @@ restore-data(){
 }
 ############################################
 installer-pak(){
-	yum -y install grub2 dhclient openssh-server kernel dracut-network || true
+	yum -y install grub2 dhclient openssh-server kernel dracut-network bash-completion || true
 		##enable sshd
 			sed -i '/^#PermitRootLogin\s/s/.*/&\nPermitRootLogin yes/' /etc/ssh/sshd_config && systemctl enable sshd
 }
