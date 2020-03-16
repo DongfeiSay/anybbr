@@ -85,5 +85,5 @@ echo "
 
 Install centos7 successfully  ;     default root password:  cnddy10
 
-please run sync;reboot -f
+please run sync;/sbin/reboot -f
 "
