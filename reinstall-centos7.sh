@@ -9,7 +9,7 @@ dl(){
 	local image='https://github.com/wuntel/anybbr/raw/master/centos-7.7-x86_64-docker.tar.xz'
 		local busybox='https://busybox.net/downloads/binaries/1.31.0-defconfig-multiarch-musl/busybox-x86_64'
 			[ -d /tmpos ] || mkdir /tmpos && cd /tmpos
-				wget -qO /tmpos/centos7.tar.xz ${image} && wget -qO /tmpos/busybox ${busybox} && chmod 777 /tmpos/busybox
+				wget --no-check-certificate -qO /tmpos/centos7.tar.xz ${image} && wget --no-check-certificate -qO /tmpos/busybox ${busybox} && chmod 777 /tmpos/busybox
 }
 ############################################
 backup-data(){
