@@ -22,7 +22,7 @@ for shutdown in $(echo killprocs mount-ro savecache);do
 done
 sleep 1
 grub-install $(ls /dev/*da)
-echo GRUB_CMDLINE_LINUX=modules=ext4\ quiet >>/etc/default/grub
+echo GRUB_CMDLINE_LINUX=modules=ext4\\ quiet >>/etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 echo -e "auto eth0\niface eth0 inet dhcp" >/etc/network/interfaces
 rm -rf /mnt/*
